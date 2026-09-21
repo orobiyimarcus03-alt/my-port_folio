@@ -396,3 +396,22 @@ header {
 }
 
 /* responsive layout */
+
+@media (max-width:425px) {
+
+    body {
+        background: linear-gradient(to bottom, #101010, #191919);
+        overflow-x: hidden;
+    }
+
+    header {
+      display: flex;
+      flex-direction: column;
+      justify-content: none;
+
+    }
+
+    .admin>p:nth-child(1){
+        font-size: 100px;
+    }
+}
