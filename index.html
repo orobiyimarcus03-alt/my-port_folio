@@ -15,23 +15,16 @@
 
 <body>
     <header>
-        <div class="header-main">
-            <div class="admin">
-                <P>Mar_ <span class="coloured-name">Cus</span></P>
-                <p>production designer</p>
-            </div>
-
-            <button class="burger-menu" type="button" aria-label="Open menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
+        <div class="admin">
+            <P>Mar_ <span class="coloured-name">Cus</span></P>
+            <p>production designer</p>
         </div>
 
         <div class="tabs">
             <a href="#project">Work</a>
             <a href="#info">About</a>
         </div>
+
 
         <div class="nav-2">
             <a href="#">Linkdin</a>
@@ -122,8 +115,8 @@
 
             <br><br>
 
-            <p>I enjoy turning ideas into functional and visually appealing websites. My goal is to create work that is
-                simple, creative, and useful.
+            My goal is to create work that is
+            simple, creative, and useful.
             </p>
 
             <br><br>
@@ -196,25 +189,6 @@
 
 
     </div>
-
-    <script>
-        const burgerMenu = document.querySelector('.burger-menu');
-        const navMenu = document.querySelector('.nav-2');
-
-        if (burgerMenu && navMenu) {
-            burgerMenu.addEventListener('click', () => {
-                navMenu.classList.toggle('active');
-                burgerMenu.classList.toggle('open');
-            });
-
-            document.addEventListener('click', (event) => {
-                if (!navMenu.contains(event.target) && !burgerMenu.contains(event.target)) {
-                    navMenu.classList.remove('active');
-                    burgerMenu.classList.remove('open');
-                }
-            });
-        }
-    </script>
 </body>
 
 </html>
