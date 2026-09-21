@@ -1,0 +1,398 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: linear-gradient(to left, #101010, #191919);
+    overflow-x: hidden;
+}
+
+/* the header part  */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 30px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+}
+
+.admin>p:nth-child(1) {
+    color: white;
+    font-size: 25px;
+    font-family: roboto;
+}
+
+.admin>p:nth-child(2) {
+    color: grey;
+    font-size: 12px;
+}
+
+/* nav  */
+
+.tabs {
+    display: flex;
+    position: relative;
+    width: 200px;
+    padding: 5px;
+    border-radius: 50px;
+    border: none;
+    /* background-color: #2D2D2D; */
+    backdrop-filter: blur(5px);
+    box-shadow: 0 0 1px grey;
+}
+
+.tabs a {
+    position: relative;
+    z-index: 1;
+    flex: 1;
+    padding: 15px;
+    text-align: center;
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+}
+
+/* Hover effect */
+.tabs a:hover {
+    /* background: rgba(255, 255, 255, 0.15); */
+    backdrop-filter: blur(5px);
+    box-shadow: 0 0 2px grey;
+    transition: 0.3s ease;
+}
+
+/* nav-2  */
+.nav-2 {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-2>a:nth-child(1) {
+    color: white;
+    font-family: roboto;
+    font-size: 16px;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+.nav-2>a:nth-child(1):hover {
+    background-color: #2E2E2E;
+    padding: 10px 17px;
+    border-radius: 20px;
+}
+
+.nav-2>a:nth-child(2) {
+    color: white;
+    font-family: roboto;
+    font-size: 16px;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+.nav-2>a:nth-child(2):hover {
+    background-color: #2E2E2E;
+    padding: 10px 17px;
+    border-radius: 20px;
+}
+
+.texes {
+    margin-left: 200px;
+}
+
+.texes>p:nth-child(1) {
+    color: white;
+    font-family: roboto;
+    font-size: 70px;
+    margin-top: 100px;
+}
+
+.coloured-name {
+    background-image: linear-gradient(grey 50%, black);
+    background-size: cover;
+    background-position: center;
+    color: transparent;
+    background-clip: text;
+}
+
+.texes>p:nth-child(2) {
+    color: white;
+    font-family: roboto;
+    font-size: 30px;
+    margin-top: 5px;
+}
+
+.texes>p:nth-child(3) {
+    display: flex;
+    width: 500px;
+    text-align: left;
+    margin-top: 10px;
+    color: rgb(192, 180, 180);
+    font-size: 16px;
+}
+
+.rounded-button {
+    margin-left: 200px;
+    display: flex;
+    gap: 10px;
+}
+
+.rounded-button>img {
+    height: 35px;
+    margin-top: 15px;
+    cursor: pointer;
+    margin-bottom: 15px;
+}
+
+.rounded-button>img:active {
+    scale: 1.5;
+    transition: all 0.3s ease;
+}
+
+.work {
+    margin-left: 200px;
+    display: flex;
+    gap: 20px;
+}
+
+.work>button {
+    padding: 15px 30px;
+    border-radius: 20px;
+    border: 1px solid gray;
+    background-color: transparent;
+    color: white;
+    font-size: 15px;
+    font-family: roboto;
+}
+
+.work>button:active {
+    scale: 1.5;
+    transition: all 0.5s ease;
+}
+
+.hire>button {
+    padding: 15px 30px;
+    border-radius: 20px;
+    border: 1px solid gray;
+    background-color: transparent;
+    color: white;
+    font-size: 15px;
+    font-family: roboto;
+}
+
+.hire>button:active {
+    scale: 1.5;
+    transition: all 0.5s ease;
+}
+
+.s-box {
+    display: flex;
+    align-items: center;
+    gap: 100px;
+    margin-top: 150px;
+    margin-left: 180px;
+}
+
+.s-box {
+    background-color: transparent;
+    padding: 60px;
+    border: 1px solid rgb(69, 67, 67);
+    width: 80%;
+    border-radius: 1000px;
+    box-shadow: 0 0 15px 1px rgb(70, 67, 67);
+
+}
+
+
+.s-box:hover {
+    background-color: #1e1d1d;
+    cursor: pointer;
+    transition: all 1s ease-in-out;
+    transform: scale(1.05);
+}
+
+
+.profile-img {
+    height: 400px;
+    width: 400px;
+    border-radius: 500px;
+    background: url(asset/front-view-smiley-man-pressing-buzzer.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.img-1>img {
+    height: 100px;
+}
+
+/* after the main  */
+
+/* the arrow down  */
+.arrow-down {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    position: fixed;
+    left: 0;
+    right: 0;
+}
+
+.arrow-down>img {
+    height: 50px;
+}
+
+.arrow-down>img:hover {
+    scale: 1.5;
+    transition: all 0.5s ease;
+}
+
+/* the about section */
+.hdns {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.dot {
+    height: 15px;
+    width: 15px;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0 0 3px 1px white;
+    border: 1px solid grey;
+}
+
+.info {
+    margin-left: 300px;
+    margin-top: 100px;
+}
+
+.hdns>p {
+    color: grey;
+    font-family: roboto;
+    font-size: 19p;
+}
+
+.about-me {
+    color: rgb(184, 177, 177);
+    width: 80%;
+    height: 80%;
+    background-color: #232222;
+    padding: 35px 0px;
+    margin-top: 20px;
+    border-radius: 1000px;
+    box-shadow: 0 0 5px 1px rgb(70, 67, 67);
+
+}
+
+.about-me:hover {
+    background-color: #1e1d1d;
+    cursor: pointer;
+    transition: all 1s ease-in-out;
+    transform: scale(1.05);
+    color: white;
+}
+
+
+.about-me>p {
+    width: 700px;
+    margin-left: 85px;
+    font-size: 20px;
+
+    font-family: roboto;
+}
+
+.work {
+    margin-left: 300px;
+    margin-top: 100px;
+    margin-bottom: 30px;
+}
+
+/* project  */
+
+.prjt {
+    width: min(1200px, calc(100% - 60px));
+    margin: 0 auto 10px;
+    margin-bottom: 10px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 500px));
+    justify-content: center;
+    gap: 30px;
+}
+
+.box-one {
+    width: 500px;
+    height: 500px;
+    background-color: #232222;
+    margin-top: 20px;
+    border-radius: 100px;
+    box-shadow: 0 0 5px 1px rgb(70, 67, 67);
+    padding: 20px 35px;
+    display: flex;
+    flex-direction: column;
+}
+
+.box-one>p {
+    font-size: 30px;
+    text-align: center;
+    font-family: roboto;
+    font-weight: 700;
+    color: rgb(184, 177, 177);
+}
+
+.box-one>img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 80px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.view-button {
+    padding: 10px 50px;
+
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.view-button>button {
+    padding: 15px 50px;
+    border-radius: 50px;
+    border: none;
+    background-color: #161515;
+    color: white;
+    font-size: 18px;
+}
+
+.view-button>button:hover {
+    background-color: transparent;
+    transition: all 0.2s linear;
+    scale: 1.1;
+}
+
+@media (max-width: 560px) {
+    .prjt {
+        width: calc(100% - 30px);
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .box-one {
+        width: 100%;
+    }
+}
+
+/* responsive layout */
