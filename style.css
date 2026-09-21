@@ -1,4 +1,3 @@
-/* Reset and base setup */
 * {
     padding: 0;
     margin: 0;
@@ -12,35 +11,19 @@ html {
 body {
     background: linear-gradient(to left, #101010, #191919);
     overflow-x: hidden;
-    color: white;
-    font-family: roboto, sans-serif;
 }
 
-img {
-    max-width: 100%;
-    display: block;
-}
-
-button,
-a {
-    transition: all 0.3s ease;
-}
-
-/* Header layout */
+/* the header part  */
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 16px;
-    flex-wrap: wrap;
     padding: 20px 30px;
-    position: sticky;
+    position: fixed;
     top: 0;
     left: 0;
     right: 0;
-    z-index: 10;
-    background: transparent;
-    backdrop-filter: none;
+    z-index: 1;
 }
 
 .admin>p:nth-child(1) {
@@ -54,11 +37,11 @@ header {
     font-size: 12px;
 }
 
-/* Main navigation pills */
+/* nav  */
 .tabs {
     display: flex;
     position: relative;
-    width: min(220px, 100%);
+    width: 200px;
     padding: 5px;
     border-radius: 50px;
     border: none;
@@ -80,42 +63,53 @@ header {
 .tabs a:hover {
     backdrop-filter: blur(5px);
     box-shadow: 0 0 2px grey;
+    transition: 0.3s ease;
 }
 
-/* Secondary links like LinkedIn and Resume */
 .nav-2 {
     display: flex;
     gap: 20px;
-    flex-wrap: wrap;
 }
 
-.nav-2>a:nth-child(1),
+.nav-2>a:nth-child(1) {
+    color: white;
+    font-family: roboto;
+    font-size: 16px;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+.nav-2>a:nth-child(1):hover {
+    background-color: #2E2E2E;
+    padding: 10px 17px;
+    border-radius: 20px;
+}
+
 .nav-2>a:nth-child(2) {
     color: white;
     font-family: roboto;
     font-size: 16px;
     text-decoration: none;
     display: inline-block;
-    padding: 10px 14px;
+    transition: all 0.3s ease;
+}
+
+.nav-2>a:nth-child(2):hover {
+    background-color: #2E2E2E;
+    padding: 10px 17px;
     border-radius: 20px;
 }
 
-.nav-2>a:nth-child(1):hover,
-.nav-2>a:nth-child(2):hover {
-    background-color: #2E2E2E;
-}
-
-/* Hero text styles */
 .texes {
-    margin-left: 0;
-    max-width: 650px;
+    margin-left: 200px;
 }
 
 .texes>p:nth-child(1) {
     color: white;
     font-family: roboto;
-    font-size: clamp(2.8rem, 5vw, 4.5rem);
-    margin-top: 0;
+    font-size: 70px;
+    margin-top: 100px;
 }
 
 .coloured-name {
@@ -129,32 +123,28 @@ header {
 .texes>p:nth-child(2) {
     color: white;
     font-family: roboto;
-    font-size: clamp(1.5rem, 2vw, 2.2rem);
+    font-size: 30px;
     margin-top: 5px;
 }
 
 .texes>p:nth-child(3) {
     display: flex;
-    width: min(500px, 100%);
+    width: 500px;
     text-align: left;
     margin-top: 10px;
     color: rgb(192, 180, 180);
     font-size: 16px;
-    line-height: 1.6;
 }
 
-/* Small icon row */
 .rounded-button {
-    margin-left: 0;
+    margin-left: 200px;
     display: flex;
     gap: 10px;
-    flex-wrap: wrap;
-    margin-top: 20px;
 }
 
 .rounded-button>img {
     height: 35px;
-    margin-top: 0;
+    margin-top: 15px;
     cursor: pointer;
     margin-bottom: 15px;
 }
@@ -164,16 +154,27 @@ header {
     transition: all 0.3s ease;
 }
 
-/* CTA buttons */
 .work {
-    margin-left: 0;
-    margin-top: 0;
+    margin-left: 200px;
     display: flex;
     gap: 20px;
-    flex-wrap: wrap;
 }
 
-.work>button,
+.work>button {
+    padding: 15px 30px;
+    border-radius: 20px;
+    border: 1px solid gray;
+    background-color: transparent;
+    color: white;
+    font-size: 15px;
+    font-family: roboto;
+}
+
+.work>button:active {
+    scale: 1.5;
+    transition: all 0.5s ease;
+}
+
 .hire>button {
     padding: 15px 30px;
     border-radius: 20px;
@@ -182,27 +183,27 @@ header {
     color: white;
     font-size: 15px;
     font-family: roboto;
-    cursor: pointer;
 }
 
-.work>button:active,
 .hire>button:active {
-    scale: 1.1;
+    scale: 1.5;
     transition: all 0.5s ease;
 }
 
-/* Hero card */
 .s-box {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    gap: 40px;
-    width: min(1200px, calc(100% - 40px));
-    margin: 120px auto 0;
-    padding: clamp(25px, 4vw, 60px);
+    gap: 100px;
+    margin-top: 150px;
+    margin-left: 180px;
+}
+
+.s-box {
     background-color: transparent;
+    padding: 60px;
     border: 1px solid rgb(69, 67, 67);
-    border-radius: 60px;
+    width: 80%;
+    border-radius: 1000px;
     box-shadow: 0 0 15px 1px rgb(70, 67, 67);
 }
 
@@ -210,30 +211,23 @@ header {
     background-color: #1e1d1d;
     cursor: pointer;
     transition: all 1s ease-in-out;
-    transform: scale(1.02);
-}
-
-.s-box>div:first-child {
-    flex: 1 1 480px;
-    min-width: 0;
+    transform: scale(1.05);
 }
 
 .profile-img {
-    height: clamp(260px, 36vw, 420px);
-    width: clamp(260px, 36vw, 420px);
+    height: 400px;
+    width: 400px;
     border-radius: 500px;
     background: url(asset/WhatsApp\ Image\ 2026-09-21\ at\ 8.38.35\ PM.jpeg);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    box-shadow: 0 0 25px rgba(255, 255, 255, 0.08);
 }
 
 .img-1>img {
     height: 100px;
 }
 
-/* Scroll arrow */
 .arrow-down {
     display: flex;
     justify-content: center;
@@ -252,7 +246,6 @@ header {
     transition: all 0.5s ease;
 }
 
-/* Section title row */
 .hdns {
     display: flex;
     gap: 10px;
@@ -268,27 +261,25 @@ header {
     border: 1px solid grey;
 }
 
-/* About section */
 .info {
-    margin-left: 0;
+    margin-left: 300px;
     margin-top: 100px;
-    width: min(1200px, calc(100% - 40px));
-    margin-inline: auto;
 }
 
 .hdns>p {
     color: grey;
     font-family: roboto;
-    font-size: 19px;
+    font-size: 19p;
 }
 
 .about-me {
     color: rgb(184, 177, 177);
-    width: min(100%, 1200px);
+    width: 80%;
+    height: 80%;
     background-color: #232222;
-    padding: 35px 0;
+    padding: 35px 0px;
     margin-top: 20px;
-    border-radius: 40px;
+    border-radius: 1000px;
     box-shadow: 0 0 5px 1px rgb(70, 67, 67);
 }
 
@@ -296,34 +287,39 @@ header {
     background-color: #1e1d1d;
     cursor: pointer;
     transition: all 1s ease-in-out;
-    transform: scale(1.02);
+    transform: scale(1.05);
     color: white;
 }
 
 .about-me>p {
-    width: min(700px, calc(100% - 80px));
+    width: 700px;
     margin-left: 85px;
     font-size: 20px;
-    line-height: 1.7;
     font-family: roboto;
 }
 
-/* Projects section */
+.work {
+    margin-left: 300px;
+    margin-top: 100px;
+    margin-bottom: 30px;
+}
+
 .prjt {
-    width: min(1200px, calc(100% - 40px));
+    width: min(1200px, calc(100% - 60px));
     margin: 0 auto 10px;
+    margin-bottom: 10px;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(500px, 500px));
     justify-content: center;
     gap: 30px;
 }
 
 .box-one {
-    width: 100%;
-    min-height: 500px;
+    width: 500px;
+    height: 500px;
     background-color: #232222;
     margin-top: 20px;
-    border-radius: 60px;
+    border-radius: 100px;
     box-shadow: 0 0 5px 1px rgb(70, 67, 67);
     padding: 20px 35px;
     display: flex;
@@ -331,7 +327,7 @@ header {
 }
 
 .box-one>p {
-    font-size: clamp(1.5rem, 2vw, 2rem);
+    font-size: 30px;
     text-align: center;
     font-family: roboto;
     font-weight: 700;
@@ -342,7 +338,7 @@ header {
     width: 100%;
     height: 250px;
     object-fit: cover;
-    border-radius: 40px;
+    border-radius: 80px;
     margin-top: 30px;
     margin-bottom: 30px;
 }
@@ -361,133 +357,25 @@ header {
     background-color: #161515;
     color: white;
     font-size: 18px;
-    cursor: pointer;
 }
 
 .view-button>button:hover {
     background-color: transparent;
     transition: all 0.2s linear;
-    scale: 1.05;
+    scale: 1.1;
 }
 
-/* Tablet layout */
-@media (max-width: 1100px) {
-    .s-box {
-        flex-direction: column;
-        text-align: center;
-        border-radius: 40px;
-    }
-
-    .s-box>div:first-child {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .texes>p:nth-child(3) {
-        width: 100%;
-        text-align: center;
-    }
-
-    .profile-img {
-        width: min(360px, 70vw);
-        height: min(360px, 70vw);
-    }
-}
-
-/* Small tablet and mobile layout */
-@media (max-width: 760px) {
-    header {
-        justify-content: center;
-        padding: 18px 16px;
-    }
-
-    .admin {
-        text-align: center;
-    }
-
-    .tabs {
-        width: 100%;
-        max-width: 260px;
-    }
-
-    .nav-2 {
-        width: 100%;
-        justify-content: center;
-    }
-
-    .s-box {
-        width: calc(100% - 20px);
-        margin-top: 90px;
-        padding: 20px 18px;
-    }
-
-    .texes>p:nth-child(1) {
-        font-size: clamp(2.1rem, 12vw, 3.2rem);
-    }
-
-    .texes>p:nth-child(2) {
-        font-size: 1.45rem;
-    }
-
-    .rounded-button {
-        justify-content: center;
-    }
-
-    .work {
-        justify-content: center;
-        margin-top: 30px;
-    }
-
-    .work>button,
-    .hire>button {
-        width: 100%;
-        max-width: 200px;
-    }
-
-    .info {
-        width: calc(100% - 20px);
-        margin-top: 70px;
-    }
-
-    .about-me {
-        border-radius: 30px;
-    }
-
-    .about-me>p {
-        width: calc(100% - 40px);
-        margin-left: 20px;
-        font-size: 1.05rem;
-    }
-
-    .arrow-down {
-        position: static;
-        margin-top: 20px;
-        margin-bottom: 20px;
-    }
-
+@media (max-width: 560px) {
     .prjt {
-        width: calc(100% - 20px);
+        width: calc(100% - 30px);
+        grid-template-columns: minmax(0, 1fr);
     }
 
     .box-one {
-        min-height: auto;
-        border-radius: 40px;
-        padding: 20px 18px;
-    }
-
-    .box-one>img {
-        height: 220px;
-        border-radius: 25px;
-    }
-
-    .view-button {
-        padding: 8px 20px;
+        width: 100%;
     }
 }
 
-/* Phone-only layout */
 @media (max-width: 425px) {
     body {
         background: linear-gradient(to bottom, #101010, #191919);
@@ -501,6 +389,11 @@ header {
         justify-content: flex-start;
         gap: 12px;
         padding: 14px 16px;
+        position: fixed;
+        left: 0;
+        right: 0;
+        top: 0;
+        z-index: 10;
     }
 
     .header-main {
@@ -532,7 +425,7 @@ header {
         gap: 5px;
         width: 42px;
         height: 42px;
-        background: rgba(255, 255, 255, 0.04);
+        background: transparent;
         border: 1px solid rgba(255, 255, 255, 0.25);
         border-radius: 12px;
         padding: 8px;
@@ -551,8 +444,6 @@ header {
     .tabs {
         width: 100%;
         max-width: 190px;
-        order: 2;
-        align-self: flex-start;
         display: flex;
         flex-direction: row;
         border-radius: 18px;
