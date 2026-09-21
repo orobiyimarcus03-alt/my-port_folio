@@ -1,3 +1,4 @@
+/* Reset and base setup */
 * {
     padding: 0;
     margin: 0;
@@ -25,7 +26,7 @@ a {
     transition: all 0.3s ease;
 }
 
-/* the header part  */
+/* Header layout */
 header {
     display: flex;
     justify-content: space-between;
@@ -53,7 +54,7 @@ header {
     font-size: 12px;
 }
 
-/* nav  */
+/* Main navigation pills */
 .tabs {
     display: flex;
     position: relative;
@@ -81,6 +82,7 @@ header {
     box-shadow: 0 0 2px grey;
 }
 
+/* Secondary links like LinkedIn and Resume */
 .nav-2 {
     display: flex;
     gap: 20px;
@@ -103,6 +105,7 @@ header {
     background-color: #2E2E2E;
 }
 
+/* Hero text styles */
 .texes {
     margin-left: 0;
     max-width: 650px;
@@ -140,6 +143,7 @@ header {
     line-height: 1.6;
 }
 
+/* Small icon row */
 .rounded-button {
     margin-left: 0;
     display: flex;
@@ -160,6 +164,7 @@ header {
     transition: all 0.3s ease;
 }
 
+/* CTA buttons */
 .work {
     margin-left: 0;
     margin-top: 0;
@@ -186,6 +191,7 @@ header {
     transition: all 0.5s ease;
 }
 
+/* Hero card */
 .s-box {
     display: flex;
     align-items: center;
@@ -227,6 +233,7 @@ header {
     height: 100px;
 }
 
+/* Scroll arrow */
 .arrow-down {
     display: flex;
     justify-content: center;
@@ -245,6 +252,7 @@ header {
     transition: all 0.5s ease;
 }
 
+/* Section title row */
 .hdns {
     display: flex;
     gap: 10px;
@@ -260,6 +268,7 @@ header {
     border: 1px solid grey;
 }
 
+/* About section */
 .info {
     margin-left: 0;
     margin-top: 100px;
@@ -299,14 +308,7 @@ header {
     font-family: roboto;
 }
 
-.work {
-    margin-left: 0;
-    margin-top: 100px;
-    margin-bottom: 30px;
-    width: min(1200px, calc(100% - 40px));
-    margin-inline: auto;
-}
-
+/* Projects section */
 .prjt {
     width: min(1200px, calc(100% - 40px));
     margin: 0 auto 10px;
@@ -368,6 +370,7 @@ header {
     scale: 1.05;
 }
 
+/* Tablet layout */
 @media (max-width: 1100px) {
     .s-box {
         flex-direction: column;
@@ -393,6 +396,7 @@ header {
     }
 }
 
+/* Small tablet and mobile layout */
 @media (max-width: 760px) {
     header {
         justify-content: center;
@@ -483,6 +487,7 @@ header {
     }
 }
 
+/* Phone-only layout */
 @media (max-width: 425px) {
     body {
         background: linear-gradient(to bottom, #101010, #191919);
