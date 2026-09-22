@@ -180,8 +180,10 @@ header {
     background-image: linear-gradient(rgb(1, 1, 42));
     background-size: cover;
     background-position: center;
-    color: transparent;
+    color: black;
     background-clip: text;
+    font-weight: 600;
+    text-shadow: 0 0 3px black;
 }
 
 .texes>p:nth-child(2) {
