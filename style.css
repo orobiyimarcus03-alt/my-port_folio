@@ -9,7 +9,7 @@ html {
 }
 
 body {
-    background: linear-gradient(to left, #101010, #191919);
+    background: linear-gradient(to left, #101010);
     overflow-x: hidden;
     animation: pageload 1.2s linear;
 }
@@ -280,15 +280,15 @@ header {
     color: rgb(184, 177, 177);
     width: 80%;
     height: 80%;
-    background-color: #232222;
+    background-color: transparent;
     padding: 35px 0px;
     margin-top: 20px;
     border-radius: 1000px;
-    box-shadow: 0 0 5px 1px rgb(70, 67, 67);
+    box-shadow: 0 0 5px 1px rgb(11, 10, 10);
 }
 
 .about-me:hover {
-    background-color: #1e1d1d;
+    background-color: #100f0f;
     cursor: pointer;
     transition: all 1s ease-in-out;
     transform: scale(1.05);
