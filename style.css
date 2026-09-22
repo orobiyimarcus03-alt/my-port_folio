@@ -12,11 +12,13 @@ body {
     min-height: 100vh;
     position: relative;
     isolation: isolate;
-    background:
+    /* background:
         radial-gradient(circle at 15% 20%, rgba(66, 91, 120, 0.3), transparent 28%),
         radial-gradient(circle at 85% 35%, rgba(117, 67, 102, 0.25), transparent 30%),
         radial-gradient(circle at 50% 100%, rgba(40, 47, 91, 0.2), transparent 35%),
-        #090a0d;
+        #090a0d; */
+
+    background: linear-gradient(rgb(63, 63, 100), rgb(49, 49, 225), rgb(10, 10, 82));
     overflow-x: hidden;
 }
 
@@ -59,7 +61,7 @@ body::after {
 
 /* page load animation  */
 .suba {
-    animation: pageload 1s  ease-in-out ;
+    animation: pageload 1s ease-in-out;
 }
 
 @keyframes pageload {
@@ -175,7 +177,7 @@ header {
 }
 
 .coloured-name {
-    background-image: linear-gradient(grey 50%, black);
+    background-image: linear-gradient(rgb(1, 1, 42));
     background-size: cover;
     background-position: center;
     color: transparent;
@@ -223,13 +225,14 @@ header {
 }
 
 .work>button {
-    padding: 15px 30px;
-    border-radius: 20px;
-    border: 1px solid gray;
+    padding: 15px 50px;
+    border-radius: 50px;
+    border: none;
     background-color: transparent;
     color: white;
-    font-size: 15px;
-    font-family: roboto;
+    font-size: 18px;
+    backdrop-filter: blur(5px);
+    box-shadow: 0px 0px 3px black;
 }
 
 .work>button:active {
@@ -238,13 +241,14 @@ header {
 }
 
 .hire>button {
-    padding: 15px 30px;
-    border-radius: 20px;
-    border: 1px solid gray;
+    padding: 15px 50px;
+    border-radius: 50px;
+    border: none;
     background-color: transparent;
     color: white;
-    font-size: 15px;
-    font-family: roboto;
+    font-size: 18px;
+    backdrop-filter: blur(5px);
+    box-shadow: 0px 0px 3px black;
 }
 
 .hire>button:active {
