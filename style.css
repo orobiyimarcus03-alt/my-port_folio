@@ -440,6 +440,74 @@ header {
     scale: 1.1;
 }
 
+@media (min-width: 769px) and (max-width: 1200px) {
+    header {
+        padding: 20px clamp(20px, 4vw, 40px);
+    }
+
+    .s-box {
+        width: calc(100% - 64px);
+        margin: 170px auto 0;
+        padding: 42px;
+        gap: clamp(30px, 5vw, 70px);
+    }
+
+    .s-box>div:first-child {
+        min-width: 0;
+        flex: 1;
+    }
+
+    .texes {
+        margin-left: 0;
+    }
+
+    .texes>p:nth-child(1) {
+        font-size: clamp(48px, 6vw, 70px);
+    }
+
+    .texes>p:nth-child(3) {
+        width: min(500px, 100%);
+        line-height: 1.5;
+    }
+
+    .rounded-button,
+    .work {
+        margin-left: 0;
+    }
+
+    .profile-img {
+        width: clamp(260px, 30vw, 340px);
+        height: clamp(260px, 30vw, 340px);
+        flex: 0 0 auto;
+    }
+
+    .info {
+        width: calc(100% - 64px);
+        margin: 100px auto 0;
+    }
+
+    .about-me {
+        width: 100%;
+        padding: 35px clamp(30px, 6vw, 85px);
+    }
+
+    .about-me>p {
+        width: 100%;
+        margin-left: 0;
+        line-height: 1.5;
+    }
+
+    .info+.work {
+        width: calc(100% - 64px);
+        margin: 100px auto 30px;
+    }
+
+    .prjt {
+        width: calc(100% - 64px);
+        grid-template-columns: repeat(auto-fit, minmax(min(500px, 100%), 500px));
+    }
+}
+
 /* @media quary */
 
 @media (max-width: 768px) {
@@ -462,14 +530,180 @@ header {
         display: none;
     }
 
-    .tabs>a {
+    .tabs {
+        display: flex;
         position: relative;
-        z-index: 1;
-        flex: 1;
-        padding: 15px;
-        text-align: center;
-        color: white;
-        text-decoration: none;
+        width: 200px;
+        padding: 5px;
         border-radius: 50px;
+        border: none;
+        backdrop-filter: blur(5px);
+        box-shadow: 0 0 3px black;
+    }
+
+    body {
+        background: linear-gradient(160deg, #111923 0%, #070a10 52%, #211923 100%);
+    }
+
+    header {
+        justify-content: center;
+        padding: 18px 16px;
+    }
+
+    .tabs {
+        width: min(230px, 100%);
+        padding: 3px;
+        background: rgba(10, 13, 19, 0.58);
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.28);
+    }
+
+    .tabs a {
+        padding: 11px 18px;
+        font-size: 14px;
+    }
+
+    .suba {
+        padding: 0 16px;
+    }
+
+    .s-box {
+        width: 100%;
+        margin: 112px auto 0;
+        padding: 34px 20px 38px;
+        border-radius: 42px;
+        display: flex;
+        flex-direction: column-reverse;
+        gap: 28px;
+        text-align: center;
+    }
+
+    .texes {
+        margin-left: 0;
+    }
+
+    .texes>p:nth-child(1) {
+        margin-top: 0;
+        font-size: clamp(42px, 12vw, 64px);
+        line-height: 0.98;
+    }
+
+    .texes>p:nth-child(2) {
+        font-size: clamp(22px, 6vw, 30px);
+        line-height: 1.2;
+    }
+
+    .texes>p:nth-child(3) {
+        display: block;
+        width: 100%;
+        margin-top: 16px;
+        font-size: 14px;
+        line-height: 1.6;
+        text-align: center;
+    }
+
+    .rounded-button {
+        justify-content: center;
+        margin-left: 0;
+    }
+
+    .work {
+        justify-content: center;
+        margin-left: 0;
+        gap: 10px;
+    }
+
+    .work>button,
+    .hire>button {
+        padding: 13px 24px;
+        font-size: 15px;
+    }
+
+    .profile-img {
+        width: min(68vw, 280px);
+        height: min(68vw, 280px);
+    }
+
+    .arrow-down {
+        display: none;
+    }
+
+    .info {
+        margin: 82px 0 0;
+    }
+
+    .hdns>p {
+        font-size: 16px;
+    }
+
+    .about-me {
+        width: 100%;
+        height: auto;
+        padding: 25px 22px;
+        border-radius: 32px;
+    }
+
+    .about-me>p {
+        width: 100%;
+        margin-left: 0;
+        font-size: 16px;
+        line-height: 1.65;
+    }
+
+    .info+.work {
+        margin: 82px 0 24px;
+    }
+
+    .prjt {
+        width: 100%;
+        grid-template-columns: minmax(0, 1fr);
+        gap: 20px;
+    }
+
+    .box-one {
+        width: 100%;
+        height: auto;
+        min-height: 390px;
+        margin-top: 0;
+        padding: 24px 18px;
+        border-radius: 36px;
+    }
+
+    .box-one>p {
+        font-size: 22px;
+    }
+
+    .box-one>img {
+        height: auto;
+        aspect-ratio: 16 / 9;
+        margin: 24px 0;
+        border-radius: 24px;
+    }
+
+    .view-button {
+        padding: 8px 0;
+    }
+
+    .view-button>button {
+        padding: 13px 28px;
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 420px) {
+    .suba {
+        padding: 0 12px;
+    }
+
+    .s-box {
+        padding: 28px 16px 32px;
+    }
+
+    .work>button,
+    .hire>button {
+        padding: 12px 18px;
+    }
+
+    .about-me {
+        padding: 22px 18px;
     }
 }
