@@ -12,9 +12,9 @@ body {
     min-height: 100vh;
     position: relative;
     isolation: isolate;
-    background: linear-gradient(to top, #0D1319, #0B0E14 5%, #05070C, #201A24 20%, #161F2A);
+    /* background: linear-gradient(to top, #0D1319, #0B0E14 5%, #05070C, #201A24 20%, #161F2A); */
 
-    /* background: linear-gradient(rgb(63, 63, 100), rgb(49, 49, 225), rgb(10, 10, 82)); */
+    background: linear-gradient(rgb(63, 63, 100), rgb(49, 49, 225), rgb(10, 10, 82));
     overflow-x: hidden;
 }
 
