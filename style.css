@@ -12,13 +12,9 @@ body {
     min-height: 100vh;
     position: relative;
     isolation: isolate;
-    /* background:
-        radial-gradient(circle at 15% 20%, rgba(66, 91, 120, 0.3), transparent 28%),
-        radial-gradient(circle at 85% 35%, rgba(117, 67, 102, 0.25), transparent 30%),
-        radial-gradient(circle at 50% 100%, rgba(40, 47, 91, 0.2), transparent 35%),
-        #090a0d; */
+    background: linear-gradient(to top, #0D1319, #0B0E14 5%, #05070C, #201A24 20%, #161F2A);
 
-    background: linear-gradient(rgb(63, 63, 100), rgb(49, 49, 225), rgb(10, 10, 82));
+    /* background: linear-gradient(rgb(63, 63, 100), rgb(49, 49, 225), rgb(10, 10, 82)); */
     overflow-x: hidden;
 }
 
@@ -109,7 +105,7 @@ header {
     border-radius: 50px;
     border: none;
     backdrop-filter: blur(5px);
-    box-shadow: 0 0 3px 2px rgb(36, 36, 36);
+    box-shadow: 0 0 3px black;
 }
 
 .tabs a {
@@ -132,7 +128,17 @@ header {
 
 .nav-2 {
     display: flex;
-    gap: 20px;
+    gap: 15px;
+    position: relative;
+    width: 200px;
+    padding: 16px 20px;
+    border: none;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 20px;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 0 3px black;
 }
 
 .nav-2>a:nth-child(1) {
@@ -145,10 +151,11 @@ header {
 }
 
 .nav-2>a:nth-child(1):hover {
-    background-color: #2E2E2E;
-    padding: 10px 17px;
-    border-radius: 20px;
+    backdrop-filter: blur(5px);
+    transition: 0.3s ease;
+    scale: 1.1;
 }
+
 
 .nav-2>a:nth-child(2) {
     color: white;
@@ -159,11 +166,13 @@ header {
     transition: all 0.3s ease;
 }
 
+
 .nav-2>a:nth-child(2):hover {
-    background-color: #2E2E2E;
-    padding: 10px 17px;
-    border-radius: 20px;
+    backdrop-filter: blur(5px);
+    transition: 0.3s ease;
+    scale: 1.1;
 }
+
 
 .texes {
     margin-left: 200px;
@@ -253,8 +262,8 @@ header {
     box-shadow: 0px 0px 3px black;
 }
 
-.hire>button:active {
-    scale: 1.5;
+.hire>button:hover {
+    scale: 1.1;
     transition: all 0.5s ease;
 }
 
@@ -429,4 +438,38 @@ header {
     background-color: transparent;
     transition: all 0.2s linear;
     scale: 1.1;
+}
+
+/* @media quary */
+
+@media (max-width: 768px) {
+
+    /* your main header */
+    header {
+        justify-content: start;
+        padding: 80px 30px;
+    }
+
+    .admin>p:nth-child(1) {
+        display: none;
+    }
+
+    .admin>p:nth-child(2) {
+        display: none;
+    }
+
+    .nav-2 {
+        display: none;
+    }
+
+    .tabs>a {
+        position: relative;
+        z-index: 1;
+        flex: 1;
+        padding: 15px;
+        text-align: center;
+        color: white;
+        text-decoration: none;
+        border-radius: 50px;
+    }
 }
