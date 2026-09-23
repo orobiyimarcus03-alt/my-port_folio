@@ -542,7 +542,8 @@ header {
     }
 
     body {
-        background: linear-gradient(160deg, #111923 0%, #070a10 52%, #211923 100%);
+        background: linear-gradient(rgb(63, 63, 100), rgb(49, 49, 225), rgb(10, 10, 82));
+
     }
 
     header {
