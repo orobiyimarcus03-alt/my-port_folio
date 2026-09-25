@@ -542,8 +542,7 @@ header {
     }
 
     body {
-        /* background: linear-gradient(rgb(63, 63, 100), rgb(49, 49, 225), rgb(10, 10, 82)); */
-        background-color:  #0B0B0B;
+        background: linear-gradient(rgb(63, 63, 100), rgb(49, 49, 225), rgb(10, 10, 82));
 
     }
 
