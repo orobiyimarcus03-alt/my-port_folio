@@ -1,3 +1,3 @@
-function hire() {
-    alert("Processing please wait")
-}
+// function hire() {
+//     alert("Processing please wait")
+// }

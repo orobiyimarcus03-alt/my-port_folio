@@ -234,7 +234,12 @@ header {
     display: flex;
     gap: 20px;
 }
-
+/* for the text decoration  */
+.work>button>a{
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+}
 .work>button {
     padding: 15px 50px;
     border-radius: 50px;
@@ -244,6 +249,7 @@ header {
     font-size: 18px;
     backdrop-filter: blur(5px);
     box-shadow: 0px 0px 3px black;
+    text-decoration: none;
 }
 
 .work>button:active {
