@@ -4,6 +4,15 @@
     box-sizing: border-box;
 }
 
+:root {
+    --page-bg: #111318;
+    --text-primary: #f2f6f4;
+    --text-secondary: #b5bbc7;
+    --accent: #8dbbff;
+    --glass-bg: rgba(28, 33, 46, 0.62);
+    --glass-border: rgba(196, 214, 255, 0.2);
+}
+
 html {
     scroll-behavior: smooth;
 }
@@ -12,7 +21,7 @@ body {
     min-height: 100vh;
     position: relative;
     isolation: isolate;
-    background: radial-gradient(ellipse 120% 36% at 50% 0%, rgba(255, 255, 255, 0.08), transparent 76%), #101010;
+    background: radial-gradient(ellipse 120% 36% at 50% 0%, rgba(141, 187, 255, 0.12), transparent 76%), var(--page-bg);
 
     /* background: linear-gradient(rgb(63, 63, 100), rgb(49, 49, 225), rgb(10, 10, 82)); */
     overflow-x: hidden;
@@ -35,13 +44,13 @@ body::after {
 body::before {
     top: 8%;
     left: -14%;
-    background: #737373;
+    background: #8dbbff;
 }
 
 body::after {
     right: -12%;
     bottom: 5%;
-    background: #424242;
+    background: #a96863;
     animation-delay: -8s;
 }
 
@@ -119,7 +128,23 @@ header {
     border-radius: 50px;
 }
 
-.tabs a:focus {
+a,
+button {
+    -webkit-tap-highlight-color: transparent;
+}
+
+a:focus:not(:focus-visible),
+button:focus:not(:focus-visible) {
+    outline: none;
+}
+
+a:focus-visible,
+button:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+}
+
+.tabs a:focus-visible {
     backdrop-filter: blur(5px);
     box-shadow: 0 0 2px rgb(47, 47, 47);
     transition: 0.3s ease;
@@ -186,11 +211,13 @@ header {
 }
 
 .coloured-name {
-    background-image: linear-gradient(rgb(1, 1, 42));
+    background-image: linear-gradient(135deg, #d7e7ff, var(--accent));
     background-size: cover;
     background-position: center;
-    color: rgb(155, 138, 138);
+    color: transparent;
     background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     font-weight: 600;
     text-shadow: 0 0 3px black;
 }
@@ -207,7 +234,7 @@ header {
     width: 500px;
     text-align: left;
     margin-top: 10px;
-    color: rgb(192, 180, 180);
+    color: var(--text-secondary);
     font-size: 16px;
 }
 
@@ -352,7 +379,7 @@ header {
 }
 
 .about-me {
-    color: rgb(184, 177, 177);
+    color: var(--text-secondary);
     width: 80%;
     height: 80%;
     /* background-color: transparent; */
@@ -446,6 +473,34 @@ header {
     background-color: transparent;
     transition: all 0.2s linear;
     scale: 1.1;
+}
+
+.tabs,
+.nav-2,
+.work>button,
+.hire>button,
+.s-box,
+.about-me,
+.box-one,
+.view-button>button {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(14px) saturate(140%);
+    -webkit-backdrop-filter: blur(14px) saturate(140%);
+}
+
+.box-one {
+    color: var(--text-primary);
+}
+
+.hdns>p {
+    color: var(--text-secondary);
+}
+
+.dot {
+    background-color: var(--accent);
+    box-shadow: 0 0 6px 1px rgba(141, 187, 255, 0.6);
+    border-color: var(--glass-border);
 }
 
 /* footer  */
@@ -566,12 +621,7 @@ footer a {
 @media (max-width: 768px) {
 
     /* your main header */
-    body{
-        background: url(asset/nick-nice-gPm8h3DS1s4-unsplash.jpg);
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-    }
+
     header {
         justify-content: start;
         padding: 80px 30px;
@@ -608,17 +658,16 @@ footer a {
     .tabs {
         width: min(230px, 100%);
         padding: 3px;
-        background: rgba(255, 255, 255, 0.06);
-        border: 1px solid rgba(255, 255, 255, 0.14);
-        backdrop-filter: blur(12px);
-        -webkit-backdrop-filter: blur(12px);
+        background: var(--glass-bg);
+        border: 1px solid var(--glass-border);
+        backdrop-filter: blur(14px) saturate(140%);
+        -webkit-backdrop-filter: blur(14px) saturate(140%);
         box-shadow: 0 8px 24px rgba(0, 0, 0, 0.28);
     }
 
     .tabs a {
         padding: 11px 18px;
         font-size: 14px;
-        -webkit-tap-highlight-color: transparent;
     }
 
     .suba {
