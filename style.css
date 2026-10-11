@@ -566,6 +566,12 @@ footer a {
 @media (max-width: 768px) {
 
     /* your main header */
+    body{
+        background: url(asset/nick-nice-gPm8h3DS1s4-unsplash.jpg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
     header {
         justify-content: start;
         padding: 80px 30px;
