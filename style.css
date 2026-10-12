@@ -117,6 +117,10 @@ header {
     box-shadow: 0 0 3px black;
 }
 
+.desktop-nav {
+    display: flex;
+}
+
 .tabs a {
     position: relative;
     z-index: 1;
@@ -126,6 +130,10 @@ header {
     color: white;
     text-decoration: none;
     border-radius: 50px;
+}
+
+.mobile-menu {
+    display: none;
 }
 
 a,
@@ -153,49 +161,42 @@ button:focus-visible {
 
 .nav-2 {
     display: flex;
-    gap: 15px;
+    align-items: center;
+    gap: 10px;
     position: relative;
-    width: 200px;
-    padding: 16px 20px;
-    border: none;
-    border-top-right-radius: 10px;
-    border-top-left-radius: 20px;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 20px;
-    backdrop-filter: blur(5px);
-    box-shadow: 0 0 3px black;
+    padding: 8px 10px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.18);
 }
 
-.nav-2>a:nth-child(1) {
+.nav-2>a {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 10px 16px;
     color: white;
     font-family: roboto;
-    font-size: 16px;
+    font-size: 15px;
+    font-weight: 600;
     text-decoration: none;
-    display: inline-block;
-    transition: all 0.3s ease;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.04));
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
 }
 
-.nav-2>a:nth-child(1):hover {
-    backdrop-filter: blur(5px);
-    transition: 0.3s ease;
-    scale: 1.1;
+.nav-2>a span {
+    font-size: 18px;
+    line-height: 1;
 }
 
-
-.nav-2>a:nth-child(2) {
-    color: white;
-    font-family: roboto;
-    font-size: 16px;
-    text-decoration: none;
-    display: inline-block;
-    transition: all 0.3s ease;
-}
-
-
-.nav-2>a:nth-child(2):hover {
-    backdrop-filter: blur(5px);
-    transition: 0.3s ease;
-    scale: 1.1;
+.nav-2>a:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    background: linear-gradient(135deg, rgba(141, 187, 255, 0.18), rgba(255, 255, 255, 0.05));
 }
 
 
@@ -513,28 +514,77 @@ hr {
     background: rgba(255, 255, 255, 0.25);
 }
 
+.site-footer {
+    padding: 0 0 34px;
+}
+
 footer {
+    width: min(1200px, calc(100% - 40px));
+    margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 24px;
-    padding: 24px clamp(16px, 5vw, 64px);
+    gap: 30px;
+    padding: 26px 30px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 28px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.18);
     color: white;
 }
 
-footer a {
-    color: inherit;
-    text-decoration: none;
+.footer-brand {
+    max-width: 430px;
 }
 
-.role-one {
+.footer-name {
+    margin: 0;
+    color: white;
+    font-size: 26px;
+    font-family: roboto;
+    font-weight: 700;
+}
+
+.footer-tag {
+    margin-top: 10px;
+    color: var(--text-secondary);
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+.footer-links {
     display: flex;
-    gap: clamp(24px, 8vw, 80px);
+    gap: clamp(26px, 5vw, 70px);
+    align-items: flex-start;
 }
 
+.role-one,
 .role-two {
     display: flex;
-    gap: clamp(24px, 8vw, 85px);
+    flex-direction: column;
+    gap: 10px;
+}
+
+.role-one>p,
+.role-two>p {
+    margin: 0 0 4px;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+footer a:hover {
+    opacity: 0.9;
+    transform: translateX(2px);
 }
 
 
@@ -620,54 +670,133 @@ footer a {
 
 @media (max-width: 768px) {
 
-    /* your main header */
-
     header {
-        justify-content: start;
-        padding: 80px 30px;
+        justify-content: space-between;
+        align-items: center;
+        padding: 14px 16px;
+        gap: 12px;
+    }
+
+    .admin {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 2px;
+        margin-right: auto;
     }
 
     .admin>p:nth-child(1) {
-        display: none;
+        display: block;
+        font-size: 22px;
+        line-height: 1;
     }
 
     .admin>p:nth-child(2) {
-        display: none;
+        display: block;
+        font-size: 10px;
+        letter-spacing: 0.08em;
+        text-transform: lowercase;
+        color: rgba(255, 255, 255, 0.75);
     }
 
+    .desktop-nav,
     .nav-2 {
         display: none;
     }
 
-    .tabs {
-        display: flex;
+    .mobile-menu {
+        display: block;
         position: relative;
-        width: 200px;
-        padding: 5px;
-        border-radius: 50px;
-        border: none;
-        backdrop-filter: blur(5px);
-        box-shadow: 0 0 3px black;
+        margin-left: auto;
     }
 
-    header {
-        justify-content: center;
-        padding: 18px 16px;
+    .menu-toggle {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 10px 14px;
+        border: 1px solid rgba(255, 255, 255, 0.14);
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.06);
+        color: white;
+        font-size: 13px;
+        font-weight: 600;
+        letter-spacing: 0.04em;
+        box-shadow: 0 10px 22px rgba(0, 0, 0, 0.18);
+        cursor: pointer;
     }
 
-    .tabs {
-        width: min(230px, 100%);
-        padding: 3px;
-        background: var(--glass-bg);
-        border: 1px solid var(--glass-border);
-        backdrop-filter: blur(14px) saturate(140%);
-        -webkit-backdrop-filter: blur(14px) saturate(140%);
-        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.28);
+    .menu-icon {
+        position: relative;
+        width: 12px;
+        height: 12px;
+        display: inline-block;
     }
 
-    .tabs a {
-        padding: 11px 18px;
+    .menu-icon::before,
+    .menu-icon::after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        width: 8px;
+        height: 2px;
+        border-radius: 2px;
+        background: white;
+        transform: translateX(-50%);
+        transition: transform 0.2s ease;
+    }
+
+    .menu-icon::before {
+        top: 3px;
+        box-shadow: 0 4px 0 white;
+    }
+
+    .menu-icon::after {
+        top: 11px;
+        opacity: 0;
+    }
+
+    .mobile-menu.open .menu-icon::before {
+        transform: translateX(-50%) rotate(45deg);
+        top: 6px;
+        box-shadow: none;
+    }
+
+    .mobile-menu.open .menu-icon::after {
+        opacity: 1;
+        transform: translateX(-50%) rotate(-45deg);
+        top: 6px;
+    }
+
+    .mobile-nav {
+        position: absolute;
+        top: calc(100% + 10px);
+        right: 0;
+        display: none;
+        flex-direction: column;
+        gap: 8px;
+        min-width: 180px;
+        padding: 10px;
+        border-radius: 18px;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        background: rgba(17, 19, 24, 0.94);
+        backdrop-filter: blur(16px);
+        box-shadow: 0 16px 30px rgba(0, 0, 0, 0.26);
+    }
+
+    .mobile-menu.open .mobile-nav {
+        display: flex;
+    }
+
+    .mobile-nav a {
+        padding: 12px 14px;
+        border-radius: 12px;
+        color: white;
+        text-decoration: none;
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid rgba(255, 255, 255, 0.08);
         font-size: 14px;
+        font-weight: 600;
     }
 
     .suba {
@@ -797,14 +926,28 @@ footer a {
         font-size: 15px;
     }
 
+    .site-footer {
+        padding-bottom: 24px;
+    }
+
     footer {
+        flex-direction: column;
         align-items: flex-start;
-        padding: 24px 16px;
+        padding: 22px 18px;
+    }
+
+    .footer-brand {
+        max-width: 100%;
+    }
+
+    .footer-links {
+        width: 100%;
+        justify-content: space-between;
     }
 
     .role-one,
     .role-two {
-        gap: 20px;
+        gap: 12px;
     }
 }
 

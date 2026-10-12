@@ -17,18 +17,29 @@
 <body>
     <header>
         <div class="admin">
-            <P>Mar_ <span class="coloured-name">Cus</span></P>
+            <p>Mar_ <span class="coloured-name">Cus</span></p>
             <p>production designer</p>
         </div>
 
-        <div class="tabs">
+        <div class="tabs desktop-nav">
             <a href="#project">Work</a>
             <a href="#info">About</a>
         </div>
 
+        <div class="mobile-menu" aria-label="Mobile menu">
+            <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobileNav">
+                <span>Menu</span>
+                <span class="menu-icon" aria-hidden="true"></span>
+            </button>
+
+            <nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation">
+                <a href="#project">Work</a>
+                <a href="#info">About</a>
+            </nav>
+        </div>
 
         <div class="nav-2">
-            <a href="https://www.linkedin.com/in/orobiyi-marcus-899400421/" target="_blank">Linkdin
+            <a href="https://www.linkedin.com/in/orobiyi-marcus-899400421/" target="_blank">LinkedIn
                 <span>&#8599;</span></a>
             <a href="#">Resume <span>&#8599;</span></a>
         </div>
@@ -208,18 +219,25 @@
 
         <!-- Footer section -->
 
-        <section>
+        <section class="site-footer">
             <footer>
-                <div class="role-one">
-                    <a href="https://github.com/orobiyimarcus03-alt" target="_blank">Github</a>
-                    <a href="https://www.linkedin.com/in/orobiyi-marcus-899400421/"
-                        target="_blank">Linkdin<span>&#8599;</span></a>
+                <div class="footer-brand">
+                    <p class="footer-name">Mar_ <span class="coloured-name">Cus</span></p>
+                    <p class="footer-tag">Designing digital experiences that feel simple, sharp, and memorable.</p>
                 </div>
 
+                <div class="footer-links">
+                    <div class="role-one">
+                        <p>Connect</p>
+                        <a href="https://github.com/orobiyimarcus03-alt" target="_blank">Github</a>
+                        <a href="https://www.linkedin.com/in/orobiyi-marcus-899400421/"
+                            target="_blank">LinkedIn<span>&#8599;</span></a>
+                    </div>
 
-                <div class="role-two">
-                    <p>Info</p>
-                    <a href="">Resume<span>&#8599;</span></a>
+                    <div class="role-two">
+                        <p>Info</p>
+                        <a href="">Resume<span>&#8599;</span></a>
+                    </div>
                 </div>
             </footer>
         </section>
