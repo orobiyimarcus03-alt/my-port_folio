@@ -36,19 +36,48 @@ if (window.matchMedia('(pointer: fine)').matches && cursorDot && cursorRing) {
     let mouseY = window.innerHeight / 2;
     let ringX = mouseX;
     let ringY = mouseY;
+    let animationFrame = null;
+    let hasMoved = false;
 
-    // Move the glowing dot to the cursor position.
-    const updateCursor = (x, y) => {
-        cursorDot.style.left = `${x}px`;
-        cursorDot.style.top = `${y}px`;
-        cursorDot.style.opacity = '1';
+    const updateCursor = (element, x, y) => {
+        element.style.setProperty('--cursor-x', `${x}px`);
+        element.style.setProperty('--cursor-y', `${y}px`);
+        element.style.opacity = '1';
+    };
+
+    const animateRing = () => {
+        ringX += (mouseX - ringX) * 0.18;
+        ringY += (mouseY - ringY) * 0.18;
+        updateCursor(cursorRing, ringX, ringY);
+
+        if (Math.abs(mouseX - ringX) < 0.1 && Math.abs(mouseY - ringY) < 0.1) {
+            ringX = mouseX;
+            ringY = mouseY;
+            updateCursor(cursorRing, ringX, ringY);
+            animationFrame = null;
+            return;
+        }
+
+        animationFrame = requestAnimationFrame(animateRing);
     };
 
     // Track the mouse movement and update the position of the custom cursor.
     document.addEventListener('pointermove', (event) => {
         mouseX = event.clientX;
         mouseY = event.clientY;
-        updateCursor(mouseX, mouseY);
+        updateCursor(cursorDot, mouseX, mouseY);
+
+        if (!hasMoved) {
+            ringX = mouseX;
+            ringY = mouseY;
+            updateCursor(cursorRing, ringX, ringY);
+            hasMoved = true;
+            return;
+        }
+
+        if (animationFrame === null) {
+            animationFrame = requestAnimationFrame(animateRing);
+        }
     });
 
     // Shrink the cursor slightly during click interaction.
@@ -74,19 +103,4 @@ if (window.matchMedia('(pointer: fine)').matches && cursorDot && cursorRing) {
             cursorRing.classList.remove('hover');
         });
     });
-
-    // Smoothly follow the pointer with the outer ring.
-    const animateRing = () => {
-        ringX += (mouseX - ringX) * 0.18;
-        ringY += (mouseY - ringY) * 0.18;
-
-        cursorRing.style.left = `${ringX}px`;
-        cursorRing.style.top = `${ringY}px`;
-        cursorRing.style.opacity = '1';
-
-        requestAnimationFrame(animateRing);
-    };
-
-    updateCursor(mouseX, mouseY);
-    requestAnimationFrame(animateRing);
 }

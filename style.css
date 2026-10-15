@@ -44,6 +44,8 @@ body {
         z-index: 9999;
         border-radius: 50%;
         opacity: 0;
+        translate: var(--cursor-x, 0px) var(--cursor-y, 0px);
+        will-change: translate;
         transition: width 0.2s ease, height 0.2s ease, opacity 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
     }
 
